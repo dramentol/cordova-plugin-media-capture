@@ -280,9 +280,7 @@
 - (CDVPluginResult*)processVideo:(NSString*)moviePath forCallbackId:(NSString*)callbackId
 {
     // save the movie to photo album (only avail as of iOS 3.1)
-
-    /* don't need, it should automatically get saved */
-     NSLog(@"can save %@: %d ?", moviePath, UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath));
+    NSLog(@"can save %@: %d ?", moviePath, UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath));
     if (&UIVideoAtPathIsCompatibleWithSavedPhotosAlbum != NULL && UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath) == YES) {
         NSLog(@"try to save movie");
         UISaveVideoAtPathToSavedPhotosAlbum(moviePath, nil, nil, nil);
